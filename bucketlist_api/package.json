@@ -1,0 +1,27 @@
+{
+  "name": "bucketlist_api",
+  "version": "1.0.0",
+  "description": "Simple app built with react and express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thegirlfromipanema/bucket_list.git"
+  },
+  "keywords": [
+    "express",
+    "react",
+    "todo"
+  ],
+  "author": "Maya Novarini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thegirlfromipanema/bucket_list/issues"
+  },
+  "homepage": "https://github.com/thegirlfromipanema/bucket_list#readme",
+  "dependencies": {
+    "mongoose": "^4.13.4"
+  }
+}
