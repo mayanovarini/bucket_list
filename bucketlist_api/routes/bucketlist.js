@@ -1,20 +1,19 @@
-var express = require('express');
-var router = express.Router();
-var db = require('../models');
+var express = require('express'),
+    app = express(),
+    port = process.env.PORT || 3030,
+    bodyParser = require('body-parser');
 
-router.get('/', function(req, res){
-    db.Bucketlist.find()
-    .then(function(bucketlist){
-        res.json(bucketlist);
-    })
-    .catch(function(err){
-        res.send(err);
-    })
-    
+var bucketlistRoutes = require('./routes/bucketlist');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
+app.get('/', function(req, res){
+    res.send("Hello from the root route!");
 });
 
-router.post('/', function(req, res){
-    res.send("This is the post route");
-});
+app.use('/api/bucketlist', bucketlistRoutes);
 
-module.exports = router;
+app.listen(port, function(){
+    console.log("App is running on port " + process.env.PORT);
+})
